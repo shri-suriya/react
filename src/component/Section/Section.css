@@ -1,25 +1,40 @@
 .Content{
     display: flex;
     flex-direction: column;
-    gap:5px;
+    gap:10px;
     padding: 30px;
     padding-left:400px ;
+}.second{
+    display: flex;
+    gap:30px;
+    padding-left: 240px;
 }
 .Content{
     display: grid;
     grid-template-columns: 5px 10px -5px;
     background-color: rgba(255, 255, 255, 0.8);
     border: 10px solid #000;
-    padding: 20px;
+    padding: 30px;
     font-size: 30px;
     text-align: start;
-    padding-left: 70px;
+    padding-left: 80px;
 }
-.Search{
-    width: 100px;
-    height: 40px;
-    background-color: rgb(56, 53, 53);
-    color: #fff;
+.search{
+    width: 340px;
+    height: 30px;
+    background-color: rgb(254, 251, 251);
+    color: rgb(5, 5, 5);
     text-align: center;
+    margin-left: 480px;
     
+}
+.btn{
+    height: 34px;
+    width: 66px;
+    background-color: rgb(254, 251, 251);
+    color: rgb(5, 5, 5);
+    text-align: center;
+}
+.img{
+    width: 50px;
 }

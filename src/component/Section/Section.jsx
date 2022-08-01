@@ -29,14 +29,16 @@ function Section() {
     
     return (
         <div>
-        <div><form  onSubmit={SearchName} >
+        <div><br></br><form  onSubmit={SearchName} >
             <input type="text" className='search' placeholder="Search" onChange={(e)=>setSearchStr(e.target.value)}/>
-            <button type="submit">Search</button>
-        </form></div>
+            <button className='btn' type="submit">Search</button>
+        </form><br></br></div>
             {
                 (data.length > 0 && data.map((obj, key) => (
                     <div className='Content' key={key}>
+                        <div className='second'>
                         <img src={obj.picture.large}></img>
+                        <div/>
                         <div>
                         <span className='First'>Name:{obj.name.title}.{obj.name.first} {obj.name.last}</span><br></br>
                         <span className='Second'>Gender:{obj.gender}</span><br></br>
@@ -45,6 +47,7 @@ function Section() {
                         <span className='Fifth'>Dob:{obj.dob.date},<br>
                         </br>Age:{obj.dob.age}</span><br></br>
                         <span className='Sixth'>Phone:{obj.phone}</span><br></br>
+                        </div>
                         </div>
                     </div>
                 )))
