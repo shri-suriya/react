@@ -1,0 +1,17 @@
+.Content{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    padding: 30px;
+    padding-left:400px ;
+}
+.Content{
+    display: grid;
+    grid-template-columns: 5px 10px -5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 10px solid #000;
+    padding: 20px;
+    font-size: 30px;
+    text-align: start;
+    padding-left: 70px;
+}

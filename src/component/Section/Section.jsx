@@ -19,15 +19,15 @@ function Section() {
             {
                 (data.length > 0 && data.map((obj,key) => (
                     <div className='Content' key={key}>
-                        <span className='First'>Name:{obj.name.title}.{obj.name.first}<br>
-                        </br>{obj.name.last}</span><br></br>
+                        <img src={obj.picture.large}></img>
+                        <span className='First'>Name:{obj.name.title}.{obj.name.first} {obj.name.last}</span><br></br>
                         <span className='Second'>Gender:{obj.gender}</span><br></br>
                         <span className='Third'>Location:{obj.location.state}</span><br></br>
                         <span className='Fourth'>Email:{obj.email}</span><br></br>
                         <span className='Fifth'>Dob:{obj.dob.date},<br>
                         </br>Age:{obj.dob.age}</span><br></br>
-                        <span className='Sixth'>Email:{obj.phone}</span><br></br>
-                       
+                        <span className='Sixth'>Phone:{obj.phone}</span><br></br>
+                        
                     </div>
                 )) )
             }{
