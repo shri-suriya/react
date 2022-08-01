@@ -5,11 +5,11 @@ import Navbar from '../Navbar/Navbar'
 function App() {
   return (
     <div>
-      App
-      <Navbar/>
+
+      <Navbar />
 
     </div>
-    
+
   )
 }
 
