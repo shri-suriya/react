@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react'
 
 import './Section.css'
 
-
+const clickHandle = event => {
+    event.preventDefault()
+}
 
 function Section() {
     const details = localStorage.getItem("EmpInfo") || "[]";
     const EmpUrl = 'https://randomuser.me/api/?results=10';
     const [data, setData] = useState(JSON.parse(details));
+    const [searchStr, setSearchStr] = useState('');
     useEffect(() => {
         fetch(EmpUrl).then((response) => {
             response.json().then((data) => {
@@ -17,24 +20,24 @@ function Section() {
             })
         })
     }, [])
-    let searchData = (obj) => {
-        let searchedData = data.filter((searchItem) => searchItem.gender == obj.gender)
-        localStorage.setItem("EmpInfo", JSON.stringify(searchedData));
-        setData(searchedData);
-    }
-    const clickHandle = event => {
-        event.preventDefault()
-    }
+    const SearchName =(e)=>{
+        e.preventDefault()
+        let Newname=data.filter((item) => item.name.first === searchStr);
+        setData(Newname);
+        console.log(Newname);
+      }
+    
     return (
         <div>
-        <div><form >
-            <input type="text" className='search' placeholder="Search"/>
-            <button type="submit" onClick={ () => searchData(obj)}>Search</button>
+        <div><form  onSubmit={SearchName} >
+            <input type="text" className='search' placeholder="Search" onChange={(e)=>setSearchStr(e.target.value)}/>
+            <button type="submit">Search</button>
         </form></div>
             {
                 (data.length > 0 && data.map((obj, key) => (
                     <div className='Content' key={key}>
                         <img src={obj.picture.large}></img>
+                        <div>
                         <span className='First'>Name:{obj.name.title}.{obj.name.first} {obj.name.last}</span><br></br>
                         <span className='Second'>Gender:{obj.gender}</span><br></br>
                         <span className='Third'>Location:{obj.location.state}</span><br></br>
@@ -42,14 +45,16 @@ function Section() {
                         <span className='Fifth'>Dob:{obj.dob.date},<br>
                         </br>Age:{obj.dob.age}</span><br></br>
                         <span className='Sixth'>Phone:{obj.phone}</span><br></br>
-
+                        </div>
                     </div>
                 )))
             }{
                 data.length === 0 && <h1>no data available</h1>
             }
         </div>
+        
     )
+    
 }
 
 export default Section
