@@ -25,3 +25,28 @@
 .img{
     width: 20px;
 }
+@media  screen and (min-width: 540px) and (max-width: 800px) {
+    .topnav h1{
+        color: #fff;
+        padding: 5px;
+        font-size: 20px;
+    }
+    .topnav a{
+        padding-top: 10px;
+        text-decoration: none;
+        color:#fff;
+        padding-right: 5px;
+        padding-left: 5px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .img{
+        width: 2px;
+    }.topnav{
+        display:flex;
+        gap:10px;
+        background-color: black;
+        height: 50px;
+        
+    }
+}

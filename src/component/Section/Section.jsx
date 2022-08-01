@@ -39,7 +39,7 @@ function Section() {
                         <div className='second'>
                         <img src={obj.picture.large}></img>
                         <div/>
-                        <div>
+                        <div className='Detail'>
                         <span className='First'>Name:{obj.name.title}.{obj.name.first} {obj.name.last}</span><br></br>
                         <span className='Second'>Gender:{obj.gender}</span><br></br>
                         <span className='Third'>Location:{obj.location.state}</span><br></br>
