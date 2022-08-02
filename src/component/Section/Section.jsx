@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import './Section.css'
-
+import {Link} from 'react-router-dom'
 const clickHandle = event => {
     event.preventDefault()
 }
@@ -30,9 +30,11 @@ function Section() {
     return (
         <div>
         <div><br></br><form  onSubmit={SearchName} >
+            
             <input type="text" className='search' placeholder="Search" onChange={(e)=>setSearchStr(e.target.value)}/>
             <button className='btn' type="submit">Search</button>
         </form><br></br></div>
+
             {
                 (data.length > 0 && data.map((obj, key) => (
                     <div className='Content' key={key}>

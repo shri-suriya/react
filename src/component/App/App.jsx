@@ -4,20 +4,22 @@ import Navbar from '../Navbar/Navbar'
 
 import Section from '../Section/Section'
 
+// import Details from '../Details/Details'
 
-//const clickHandle = event => {
-  //event.preventDefault()
-//}
-//clickHandle();
 
 function App() {
   return (
-    <div>
 
+
+    <div>
       <Navbar />
-      <Section/>
+      <Section />
+      {/* <Details/> */}
+
 
     </div>
+
+
 
   )
 }
